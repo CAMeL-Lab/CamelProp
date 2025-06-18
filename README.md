@@ -1,6 +1,10 @@
 # CamelProp
-3,362-entry dataset of Arabic Wikipedia proper names annotated with gold-standard lemma diacritizations, paired with their 514
-English equivalents. This repo provides the dataset, along with the posprocessing pipeline used in combinatio with Chat-GPT output to create the dataset, as decribed in the paper [^1]
+This repository contains CP-WIKI-D3K, a dataset of 3,362 Arabic proper nouns from Wikipedia, each annotated with gold-standard lemma diacritizations and aligned with their English equivalents.
+It includes:
+
+    - The full dataset
+    - The postprocessing pipeline used to convert ChatGPT-4o outputs into final annotations, as described in [^1]
+    - Markdown tables listing the examples used for few-shot and one-shot prompting
 
 [^1]: Proper Name Diacritization for Arabic Wikipedia: A Benchmark Dataset
 Rawan Bondok, Mayar Nassar, Salam Khalifa, Kurt Micallef, Nizar Habash (2025)
