@@ -103,6 +103,7 @@ def add_sukoon(word):
 ### This checks if a word is a valid diacritized lemma based on the criteria described in: https://arxiv.org/abs/2505.02656
 
 def is_valid_diac(lemma):
+    lemma = ar2bw(lemma) 
     consonants_all = ['b','t','v','j','H','x','d',r'\*','r','z','s',r'\$','S','D','T','Z','E','g','f','q','k','l','m','n','h',r'\<',r'\>',r"\&",r"\}",r"\{","'"]
     lond_vowel =['iy','aA','uw']
     diacritics =['a`','i','u']
@@ -115,3 +116,13 @@ def is_valid_diac(lemma):
     end_match = r'('+c_regex+r"|y|A|w|Y|p)~?"
     valid_lemma_regex = r"^(("+start_match+mid_match+r")*"+end_match+r")$"
     valid_lemma_regex=re.compile(valid_lemma_regex)
+    if not valid_lemma_regex.match(lemma.strip()):
+        
+        return 1
+        #return re.match(valid_lemma_regex,lemma)
+    else:
+        #return re.match(valid_lemma_regex,lemma)
+        return 0
+
+
+print(is_valid_diac("hay"))
